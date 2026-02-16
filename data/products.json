@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "Classic Cotton Crew Tee",
+    "price": 899,
+    "discountPercentage": 20,
+    "sizes": ["S", "M", "L", "XL"],
+    "description": "A premium breathable cotton crew neck t-shirt designed for everyday comfort and durability.",
+    "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab"
+  },
+  {
+    "id": 2,
+    "name": "Slim Fit Denim Jeans",
+    "price": 1999,
+    "discountPercentage": 0,
+    "sizes": ["M", "L", "XL"],
+    "description": "Modern slim fit denim jeans with stretch fabric for maximum comfort and style.",
+    "image": "https://images.unsplash.com/photo-1542272604-787c3835535d"
+  },
+  {
+    "id": 3,
+    "name": "Oversized Hoodie",
+    "price": 2499,
+    "discountPercentage": 15,
+    "sizes": ["S", "M", "L"],
+    "description": "Soft fleece oversized hoodie perfect for winter layering.",
+    "image": "https://images.unsplash.com/photo-1520975922284-3e0f9a6d9b69"
+  },
+  {
+    "id": 4,
+    "name": "Formal Linen Shirt",
+    "price": 1599,
+    "discountPercentage": 10,
+    "sizes": ["M", "L", "XL"],
+    "description": "Lightweight linen shirt crafted for formal and semi-formal occasions.",
+    "image": "https://images.unsplash.com/photo-1598032895397-b9472444bf93"
+  },
+  {
+    "id": 5,
+    "name": "Athletic Joggers",
+    "price": 1299,
+    "discountPercentage": 0,
+    "sizes": ["S", "M", "L", "XL"],
+    "description": "Stretchable athletic joggers designed for comfort during workouts and casual wear.",
+    "image": "https://images.unsplash.com/photo-1514996937319-344454492b37"
+  },
+  {
+    "id": 6,
+    "name": "Leather Casual Jacket",
+    "price": 4999,
+    "discountPercentage": 25,
+    "sizes": ["M", "L"],
+    "description": "Premium leather jacket with a modern cut for a bold, stylish look.",
+    "image": "https://images.unsplash.com/photo-1520974735194-3fda1e69a8a6"
+  }
+]
