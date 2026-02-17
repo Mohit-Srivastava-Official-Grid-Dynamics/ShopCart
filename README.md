@@ -23,3 +23,19 @@ Project foundation setup:
 ✔ Compiled SCSS → `main.css`
 
 ---
+
+## ✅ Phase 2a – UI Development (In Progress)
+
+✔ Responsive Header completed  
+✔ BEM naming convention applied  
+✔ Green ShopCraft logo (Lucide icons)  
+✔ Navigation layout structured  
+✔ Modular SCSS component styling
+
+---
+
+## 📸 Preview
+
+![ShopCraft Header Preview](assets/screenshots/shopcraft-header.png)
+
+---
