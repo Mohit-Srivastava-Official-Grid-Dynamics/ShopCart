@@ -1,0 +1,62 @@
+@use "../abstracts/variables" as *;
+
+.header {
+  width: 100%;
+  background: $color-header-bg;
+  border-bottom: 1px solid $color-header-border;
+
+  &__container {
+    width: 100%;
+    padding: 18px 44px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* BRAND (Logo + Text) */
+  &__brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__brand-icon {
+    width: 26px;
+    height: 26px;
+    color: $color-primary;   // GREEN ICON
+  }
+
+  &__brand-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: $color-text-dark;
+  }
+
+  /* NAVIGATION */
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+  }
+
+  &__nav-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: $color-text-muted;
+    transition: color 0.2s ease;
+
+    i {
+      width: 18px;
+      height: 18px;
+    }
+
+    &:hover {
+      color: $color-text-dark;
+    }
+  }
+}

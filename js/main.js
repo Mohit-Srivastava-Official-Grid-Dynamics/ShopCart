@@ -1,6 +1,6 @@
-import { HomePage } from "./pages/HomePage.js";
-import { ProductDetailsPage } from "./pages/ProductDetailsPage.js";
-import { OrdersPage } from "./pages/OrdersPage.js";
+import { HomePage } from "./pages/listing.js";
+import { ProductDetailsPage } from "./pages/product.js";
+import { OrdersPage } from "./pages/orders.js";
 
 const app = document.getElementById("app");
 

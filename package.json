@@ -1,0 +1,26 @@
+{
+  "name": "ecommerce",
+  "version": "1.0.0",
+  "description": "A modern clothing e-commerce web application built using:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mohit-Srivastava-Official-Grid-Dynamics/ShopCraft.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Mohit-Srivastava-Official-Grid-Dynamics/ShopCraft/issues"
+  },
+  "homepage": "https://github.com/Mohit-Srivastava-Official-Grid-Dynamics/ShopCraft#readme",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "sass": "^1.97.3"
+  }
+}

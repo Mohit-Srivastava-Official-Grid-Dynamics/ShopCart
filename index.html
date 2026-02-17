@@ -1,20 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+<head>
+  <!-- Meta -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Title -->
   <title>ShopCraft - Discover</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="./styles/main.css" />
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/main.css">
 </head>
+
 <body>
 
-  <div id="app"></div>
+  <!-- ================= HEADER ================= -->
+  <header class="header">
+    <div class="header__container">
 
-  <script type="module" src="./js/main.js"></script>
+      <div class="header__brand">
+        <i data-lucide="store" class="header__brand-icon"></i>
+        <span class="header__brand-text">ShopCraft</span>
+      </div>
+
+      <nav class="header__nav">
+        <a href="orders.html" class="header__nav-item">
+          <i data-lucide="package"></i>
+          <span>My Orders</span>
+        </a>
+
+        <a href="#" class="header__nav-item">
+          <i data-lucide="shopping-cart"></i>
+          <span>Cart</span>
+        </a>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+
 </body>
 </html>

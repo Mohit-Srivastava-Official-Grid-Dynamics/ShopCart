@@ -1,5 +1,14 @@
-@import "variables";
-@import "base";
-@import "layout";
-@import "components";
-@import "responsive";
+@use "abstracts/variables";
+
+@use "base/reset";
+@use "layout/header";
+@use "layout/grid";
+
+@use "components/button";
+@use "components/product-card";
+@use "components/sidebar";
+@use "components/banner";
+
+@use "pages/listing";
+@use "pages/product-details";
+@use "pages/orders";

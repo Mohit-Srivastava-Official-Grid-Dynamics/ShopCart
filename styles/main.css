@@ -1,0 +1,143 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #ffffff;
+  color: #111827;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.header {
+  width: 100%;
+  background: #F9FAFB;
+  border-bottom: 1px solid #E5E7EB;
+}
+.header__container {
+  width: 100%;
+  padding: 18px 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header {
+  /* BRAND (Logo + Text) */
+}
+.header__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.header__brand-icon {
+  width: 26px;
+  height: 26px;
+  color: #10B981;
+}
+.header__brand-text {
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #111827;
+}
+.header {
+  /* NAVIGATION */
+}
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+.header__nav-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #6B7280;
+  transition: color 0.2s ease;
+}
+.header__nav-item i {
+  width: 18px;
+  height: 18px;
+}
+.header__nav-item:hover {
+  color: #111827;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+.grid {
+  display: grid;
+  gap: 32px;
+}
+.grid--products {
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid--layout {
+  grid-template-columns: 280px 1fr;
+}
+.grid--details {
+  grid-template-columns: 1fr 1fr;
+}
+
+.product-card {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+.product-card__image-wrapper {
+  position: relative;
+}
+.product-card__badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #E53E3E;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+.product-card__content {
+  padding: 16px;
+}
+.product-card__title {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.product-card__price {
+  font-weight: 600;
+}
+.product-card__price-old {
+  text-decoration: line-through;
+  color: #6B7280;
+  margin-left: 8px;
+}
+
+/*# sourceMappingURL=main.css.map */
