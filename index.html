@@ -42,11 +42,84 @@
     </div>
   </header>
 
+  <!-- ================= MAIN ================= -->
+<main class="container listing">
+
+  <!-- ===== Listing Header ===== -->
+  <div class="listing__header">
+    <h1 class="listing__title">Discover</h1>
+    <p class="listing__subtitle">0 products available</p>
+  </div>
+
+  <!-- ===== Layout ===== -->
+  <div class="listing__layout">
+
+    <!-- ===== Sidebar ===== -->
+    <aside class="sidebar">
+
+      <!-- Filters Heading -->
+      <div class="sidebar__section">
+        <div class="sidebar__heading">
+          <i data-lucide="sliders-horizontal"></i>
+          <span>Filters</span>
+        </div>
+      </div>
+
+      <!-- Size Filter -->
+      <div class="sidebar__section">
+        <div class="sidebar__title">Size</div>
+        <div class="sidebar__options">
+          <button class="sidebar__option" data-size="S">S</button>
+          <button class="sidebar__option" data-size="M">M</button>
+          <button class="sidebar__option" data-size="L">L</button>
+          <button class="sidebar__option" data-size="XL">XL</button>
+        </div>
+      </div>
+
+      <!-- Price Filter -->
+      <div class="sidebar__section">
+        <div class="sidebar__title">Price Range</div>
+        <div class="sidebar__price">
+          <input type="number" placeholder="Min" id="minPrice" />
+          <span>—</span>
+          <input type="number" placeholder="Max" id="maxPrice" />
+        </div>
+      </div>
+
+      <!-- Sale Filter -->
+<div class="sidebar__section sidebar__checkbox">
+  <label class="custom-checkbox">
+    <input type="checkbox" id="saleOnly" />
+    <span class="custom-checkbox__box"></span>
+    <span class="custom-checkbox__label">On sale only</span>
+  </label>
+</div>
+
+    </aside>
+
+    <!-- ===== Products Section ===== -->
+    <section class="products">
+      <div class="products__grid">
+        <!-- Products will be rendered dynamically -->
+      </div>
+    </section>
+
+  </div>
+
+</main>
+
+<!-- Page Script -->
+<script type="module" src="js/pages/listing.js"></script>
+
+
+
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
   <script>
     lucide.createIcons();
   </script>
+
+
 
 </body>
 </html>

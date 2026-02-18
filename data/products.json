@@ -24,7 +24,7 @@
     "discountPercentage": 15,
     "sizes": ["S", "M", "L"],
     "description": "Soft fleece oversized hoodie perfect for winter layering.",
-    "image": "https://images.unsplash.com/photo-1520975922284-3e0f9a6d9b69"
+    "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab"
   },
   {
     "id": 4,
@@ -51,6 +51,6 @@
     "discountPercentage": 25,
     "sizes": ["M", "L"],
     "description": "Premium leather jacket with a modern cut for a bold, stylish look.",
-    "image": "https://images.unsplash.com/photo-1520974735194-3fda1e69a8a6"
+    "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab"
   }
 ]

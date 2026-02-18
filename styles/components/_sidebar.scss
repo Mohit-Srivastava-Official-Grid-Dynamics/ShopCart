@@ -1,0 +1,110 @@
+.sidebar {
+  border-right: 1px solid #e5e7eb;
+  padding-right: 24px;
+
+  &__section {
+    margin-bottom: 28px;
+  }
+
+  &__heading {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 15px;
+  }
+
+  &__title {
+    font-weight: 500;
+    margin-bottom: 12px;
+    font-size: 14px;
+  }
+
+  &__options {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  &__option {
+    padding: 8px 14px;
+    border: 1px solid #d1d5db;
+    background: #ffffff;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: 0.2s ease;
+
+    &:hover {
+      border-color: #16a34a;
+      color: #16a34a;
+    }
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    input {
+      width: 90px;
+      padding: 8px;
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      font-size: 13px;
+    }
+  }
+
+//   &__checkbox {
+//     display: flex;
+//     align-items: center;
+//     gap: 8px;
+//     font-size: 14px;
+//     border-radius: 50%;
+//   }
+}
+
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  position: relative;
+
+  input {
+    display: none; // Hide default checkbox
+  }
+
+  &__box {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #d1d5db;
+    border-radius: 6px; // YES now it works
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s ease;
+  }
+
+  &__label {
+    user-select: none;
+  }
+
+  /* Checked state */
+  input:checked + &__box {
+    background: #16a34a;
+    border-color: #16a34a;
+  }
+
+  input:checked + &__box::after {
+    content: "✓";
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  &:hover &__box {
+    border-color: #16a34a;
+  }
+}

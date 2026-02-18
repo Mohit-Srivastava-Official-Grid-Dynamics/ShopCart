@@ -1,0 +1,25 @@
+.listing {
+  padding: 40px 0;
+
+  &__header {
+    margin-bottom: 32px;
+  }
+
+  &__title {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    margin-bottom: 6px;
+  }
+
+  &__subtitle {
+    color: #6b7280;
+    font-size: 14px;
+  }
+
+  &__layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+}
