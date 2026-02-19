@@ -2,6 +2,7 @@
   {
     "id": 1,
     "name": "Classic Cotton Crew Tee",
+    "category": "T-Shirts",
     "price": 899,
     "discountPercentage": 20,
     "sizes": ["S", "M", "L", "XL"],
@@ -11,6 +12,7 @@
   {
     "id": 2,
     "name": "Slim Fit Denim Jeans",
+    "category": "Jeans",
     "price": 1999,
     "discountPercentage": 0,
     "sizes": ["M", "L", "XL"],
@@ -20,6 +22,7 @@
   {
     "id": 3,
     "name": "Oversized Hoodie",
+    "category": "Hoodies",
     "price": 2499,
     "discountPercentage": 15,
     "sizes": ["S", "M", "L"],
@@ -29,6 +32,7 @@
   {
     "id": 4,
     "name": "Formal Linen Shirt",
+    "category": "Shirts",
     "price": 1599,
     "discountPercentage": 10,
     "sizes": ["M", "L", "XL"],
@@ -38,6 +42,7 @@
   {
     "id": 5,
     "name": "Athletic Joggers",
+    "category": "Joggers",
     "price": 1299,
     "discountPercentage": 0,
     "sizes": ["S", "M", "L", "XL"],
@@ -47,6 +52,7 @@
   {
     "id": 6,
     "name": "Leather Casual Jacket",
+    "category": "Jackets",
     "price": 4999,
     "discountPercentage": 25,
     "sizes": ["M", "L"],

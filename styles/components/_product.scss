@@ -1,0 +1,185 @@
+.product {
+
+  /* Layout */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-top: 30px;
+
+  /* ================= LEFT SIDE ================= */
+
+  &__left {
+    position: relative;
+
+    img {
+      width: 100%;
+      border-radius: 16px;
+      display: block;
+    }
+  }
+
+  &__badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+
+    padding: 6px 12px;
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    background: #ef4444;
+    color: #fff;
+  }
+
+  /* ================= RIGHT SIDE ================= */
+
+  &__offer {
+    margin-bottom: 20px;
+    padding: 12px 16px;
+    border-radius: 12px;
+
+    background: #f3e8d2;
+    font-weight: 500;
+  }
+
+  &__category {
+    margin-bottom: 6px;
+
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #6b7280;
+  }
+
+  &__title {
+    margin-bottom: 12px;
+    font-size: 32px;
+    line-height: 1.2;
+  }
+
+  /* ================= PRICE ================= */
+
+  &__price {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+
+    &--final {
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    &--original {
+      text-decoration: line-through;
+      color: #9ca3af;
+    }
+  }
+
+  /* ================= DESCRIPTION ================= */
+
+  &__description {
+    margin-bottom: 24px;
+    color: #4b5563;
+    line-height: 1.6;
+  }
+
+  /* ================= SIZES ================= */
+
+  &__sizes {
+    margin-bottom: 24px;
+
+    p {
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+  }
+
+  &__size-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  &__size {
+    padding: 10px 18px;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+
+    background: #fff;
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+
+    &:hover {
+      border-color: #16a34a;
+    }
+
+    &.active {
+      background: #16a34a;
+      border-color: #16a34a;
+      color: #fff;
+    }
+  }
+
+  /* ================= ADD TO CART ================= */
+
+  &__add-btn {
+    width: 100%;
+    padding: 14px;
+
+    border: none;
+    border-radius: 12px;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    background: #16a34a;
+    color: #fff;
+    cursor: pointer;
+
+    transition: background 0.2s ease, transform 0.1s ease;
+
+    &:hover {
+      background: #15803d;
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+
+
+}
+
+
+/* =========================================
+   PRODUCT PAGE BACK LINK
+========================================= */
+
+.product-page {
+
+  &__back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    margin: 24px 0;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    color: #555;
+    text-decoration: none;
+
+    transition: color 0.2s ease, transform 0.2s ease;
+
+    &:hover {
+      color: #000;
+      transform: translateX(-3px);
+    }
+  }
+
+}

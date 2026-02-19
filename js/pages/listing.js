@@ -26,7 +26,8 @@ function renderProducts(products) {
     );
 
     const productCard = `
-      <div class="product-card">
+      <a href="product.html?id=${product.id}" class="product-card">
+
         <div class="product-card__image-wrapper">
           ${product.discountPercentage > 0
             ? `<span class="product-card__badge">
@@ -51,12 +52,15 @@ function renderProducts(products) {
               : ""}
           </div>
         </div>
-      </div>
+
+      </a>
     `;
 
     productsGrid.insertAdjacentHTML("beforeend", productCard);
   });
 }
+
+
 
 function calculateDiscountedPrice(price, discount) {
   if (discount === 0) return price;
