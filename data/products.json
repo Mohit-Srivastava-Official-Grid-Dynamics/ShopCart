@@ -35,7 +35,7 @@
     "category": "Shirts",
     "price": 1599,
     "discountPercentage": 10,
-    "sizes": ["M", "L", "XL"],
+    "sizes": ["L", "XL"],
     "description": "Lightweight linen shirt crafted for formal and semi-formal occasions.",
     "image": "https://images.unsplash.com/photo-1598032895397-b9472444bf93"
   },
