@@ -2,6 +2,13 @@
   border-right: 1px solid #e5e7eb;
   padding-right: 24px;
 
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
   &__section {
     margin-bottom: 28px;
   }
@@ -12,6 +19,34 @@
     gap: 8px;
     font-weight: 600;
     font-size: 15px;
+  }
+
+  &__close {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    color: #111827;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 8px;
+    transition: background 0.2s ease;
+
+    i {
+      width: 18px;
+      height: 18px;
+    }
+
+    &:hover {
+      background: #f3f4f6;
+    }
+  }
+
+  &__divider {
+    height: 1px;
+    background: #e5e7eb;
+    margin: 16px 0 24px;
   }
 
   &__title {

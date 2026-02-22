@@ -47,23 +47,36 @@
 
   <!-- ===== Listing Header ===== -->
   <div class="listing__header">
-    <h1 class="listing__title">Discover</h1>
-    <p class="listing__subtitle"></p>
+    <div class="listing__header-text">
+      <h1 class="listing__title">Discover</h1>
+      <p class="listing__subtitle"></p>
+    </div>
+
+    <button class="listing__filters-btn" type="button">
+      <i data-lucide="sliders-horizontal"></i>
+      <span>Filters</span>
+    </button>
   </div>
+
+  <div class="filters-backdrop" aria-hidden="true"></div>
 
   <!-- ===== Layout ===== -->
   <div class="listing__layout">
-
     <!-- ===== Sidebar ===== -->
     <aside class="sidebar">
 
-      <!-- Filters Heading -->
-      <div class="sidebar__section">
+      <div class="sidebar__top">
         <div class="sidebar__heading">
           <i data-lucide="sliders-horizontal"></i>
           <span>Filters</span>
         </div>
+
+        <button class="sidebar__close" type="button" aria-label="Close filters">
+          <i data-lucide="x"></i>
+        </button>
       </div>
+
+      <div class="sidebar__divider"></div>
 
       <!-- Size Filter -->
       <div class="sidebar__section">
