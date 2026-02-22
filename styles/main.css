@@ -207,6 +207,15 @@ a {
   border-color: #16a34a;
   color: #16a34a;
 }
+.sidebar__option {
+  /* ✅ ACTIVE STATE */
+}
+.sidebar__option.active {
+  background-color: #16a34a;
+  color: #ffffff;
+  border-color: #16a34a;
+  font-weight: 500;
+}
 .sidebar__price {
   display: flex;
   align-items: center;

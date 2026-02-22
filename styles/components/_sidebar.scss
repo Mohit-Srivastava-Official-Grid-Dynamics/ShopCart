@@ -39,6 +39,13 @@
       border-color: #16a34a;
       color: #16a34a;
     }
+        /* ✅ ACTIVE STATE */
+    &.active {
+      background-color: #16a34a;
+      color: #ffffff;
+      border-color: #16a34a;
+      font-weight: 500;
+    }
   }
 
   &__price {
