@@ -3,6 +3,16 @@
 
   &__header {
     margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  &__header-text {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
   }
 
   &__title {
@@ -14,6 +24,31 @@
   &__subtitle {
     color: #6b7280;
     font-size: 14px;
+  }
+
+  &__filters-btn {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    background: #ffffff;
+    color: #111827;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+    i {
+      width: 18px;
+      height: 18px;
+    }
+
+    &:hover {
+      border-color: #16a34a;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    }
   }
 
   &__layout {

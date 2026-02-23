@@ -2,9 +2,14 @@
 
 const productsGrid = document.querySelector(".products__grid");
 const subtitle = document.querySelector(".listing__subtitle");
+const filtersOpenButton = document.querySelector(".listing__filters-btn");
+const filtersCloseButton = document.querySelector(".sidebar__close");
+const filtersBackdrop = document.querySelector(".filters-backdrop");
 
 let allProducts = [];
 let filteredProducts = [];
+
+const FILTERS_OPEN_CLASS = "filters-open";
 
 /* ===============================
    INITIAL LOAD
@@ -176,3 +181,33 @@ document.getElementById("saleOnly")?.addEventListener("change", applyFilters);
 ================================= */
 
 loadProducts();
+
+/* ===============================
+   MOBILE FILTER DRAWER
+================================= */
+
+function openFiltersDrawer() {
+  document.body.classList.add(FILTERS_OPEN_CLASS);
+}
+
+function closeFiltersDrawer() {
+  document.body.classList.remove(FILTERS_OPEN_CLASS);
+}
+
+function initFiltersDrawer() {
+  if (!filtersOpenButton || !filtersCloseButton || !filtersBackdrop) {
+    return;
+  }
+
+  filtersOpenButton.addEventListener("click", openFiltersDrawer);
+  filtersCloseButton.addEventListener("click", closeFiltersDrawer);
+  filtersBackdrop.addEventListener("click", closeFiltersDrawer);
+
+  window.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+      closeFiltersDrawer();
+    }
+  });
+}
+
+initFiltersDrawer();
