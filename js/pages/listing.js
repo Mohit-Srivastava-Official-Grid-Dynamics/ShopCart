@@ -2,6 +2,7 @@ import { getAllProducts } from "../services/productService.js";
 import { getProductCardMarkup } from "../components/ProductCard.js";
 import { calculateDiscountedPrice } from "../utils/helpers.js";
 import { initCartBadge } from "../components/CartBadge.js";
+import { initFilterSidebar } from "../components/FilterSidebar.js";
 
 const productsGrid = document.querySelector(".products__grid");
 const subtitle = document.querySelector(".listing__subtitle");
@@ -14,12 +15,29 @@ let filteredProducts = [];
 
 const FILTERS_OPEN_CLASS = "filters-open";
 
+function showLoadingState() {
+  if (!productsGrid) return;
+  productsGrid.innerHTML = `
+    <div class="state-message">Loading products...</div>
+  `;
+}
+
+function showErrorState() {
+  if (!productsGrid) return;
+  productsGrid.innerHTML = `
+    <div class="state-message state-message--error">
+      Failed to load products.
+    </div>
+  `;
+}
+
 /* ===============================
    INITIAL LOAD
 ================================= */
 
 async function loadProducts() {
   try {
+    showLoadingState();
     const products = await getAllProducts();
 
     // Add finalPrice for cleaner filtering
@@ -37,7 +55,7 @@ async function loadProducts() {
     updateProductCount(filteredProducts.length);
   } catch (error) {
     console.error("Error loading products:", error);
-    productsGrid.innerHTML = `<p>Failed to load products.</p>`;
+    showErrorState();
   }
 }
 
@@ -71,14 +89,18 @@ function updateProductCount(count) {
    FILTERING
 ================================= */
 
-function applyFilters() {
-  const selectedSize = getSelectedSize();
-  const { min, max } = getPriceRange();
-  const saleOnly = document.getElementById("saleOnly")?.checked;
+const filterControls = initFilterSidebar({
+  onChange: filters => applyFilters(filters)
+});
+
+function applyFilters(filters = filterControls?.getFilters?.()) {
+  if (!filters) return;
+
+  const { size, min, max, saleOnly } = filters;
 
   filteredProducts = allProducts.filter(product => {
     // Size filter
-    if (selectedSize && !product.sizes.includes(selectedSize)) {
+    if (size && !product.sizes.includes(size)) {
       return false;
     }
 
@@ -97,48 +119,6 @@ function applyFilters() {
   renderProducts(filteredProducts);
   updateProductCount(filteredProducts.length);
 }
-
-/* ===============================
-   HELPERS
-================================= */
-
-function getSelectedSize() {
-  const activeBtn = document.querySelector(".sidebar__option.active");
-  return activeBtn ? activeBtn.dataset.size : null;
-}
-
-function getPriceRange() {
-  const minValue = parseFloat(document.getElementById("minPrice")?.value);
-  const maxValue = parseFloat(document.getElementById("maxPrice")?.value);
-
-  return {
-    min: Number.isNaN(minValue) ? null : minValue,
-    max: Number.isNaN(maxValue) ? null : maxValue
-  };
-}
-
-/* ===============================
-   EVENT LISTENERS
-================================= */
-
-// Size buttons
-document.querySelectorAll(".sidebar__option").forEach(button => {
-  button.addEventListener("click", () => {
-    document
-      .querySelectorAll(".sidebar__option")
-      .forEach(btn => btn.classList.remove("active"));
-
-    button.classList.add("active");
-    applyFilters();
-  });
-});
-
-// Price inputs
-document.getElementById("minPrice")?.addEventListener("input", applyFilters);
-document.getElementById("maxPrice")?.addEventListener("input", applyFilters);
-
-// Sale checkbox
-document.getElementById("saleOnly")?.addEventListener("change", applyFilters);
 
 /* ===============================
    START APP

@@ -10,6 +10,20 @@ const productId = Number(params.get("id"));
 
 const productWrapper = document.querySelector(".product-page__wrapper");
 
+function showLoadingState() {
+  if (!productWrapper) return;
+  productWrapper.innerHTML = `
+    <div class="state-message">Loading product...</div>
+  `;
+}
+
+function showErrorState(message) {
+  if (!productWrapper) return;
+  productWrapper.innerHTML = `
+    <div class="state-message state-message--error">${message}</div>
+  `;
+}
+
 function renderProduct(product) {
   const finalPrice = calculateDiscountedPrice(
     product.price,
@@ -87,15 +101,13 @@ function renderProduct(product) {
   const addButton = document.querySelector(".product__add-btn");
   addButton.addEventListener("click", () => {
     const selectedSize = getSelectedSize();
-    const updatedCart = addToCart(product, selectedSize);
+    addToCart(product, selectedSize);
     updateCartBadge();
 
     showToast({
       title: "Product added to cart successfully",
       message: `${product.name} (${selectedSize}) has been added.`
     });
-
-    return updatedCart;
   });
 }
 
@@ -103,14 +115,15 @@ async function init() {
   initCartBadge();
 
   if (!productId) {
-    productWrapper.innerHTML = "<p>Invalid product ID</p>";
+    showErrorState("Invalid product ID");
     return;
   }
 
+  showLoadingState();
   const product = await getProductById(productId);
 
   if (!product) {
-    productWrapper.innerHTML = "<p>Product not found</p>";
+    showErrorState("Product not found");
     return;
   }
 

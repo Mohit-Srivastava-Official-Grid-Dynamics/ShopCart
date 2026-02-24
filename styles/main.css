@@ -443,6 +443,22 @@ input:checked + .custom-checkbox__box::after {
     bottom: auto;
   }
 }
+.state-message {
+  padding: 18px 20px;
+  border-radius: 12px;
+  border: 1px solid #E5E7EB;
+  background: #f9fafb;
+  color: #6B7280;
+  font-size: 15px;
+  text-align: center;
+}
+
+.state-message--error {
+  border-color: #fecaca;
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
 .product {
   /* Layout */
   display: grid;
