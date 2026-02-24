@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShopCraft - My Orders</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="header__container">
+      <div class="header__brand">
+        <i data-lucide="store" class="header__brand-icon"></i>
+        <span class="header__brand-text">ShopCraft</span>
+      </div>
+
+      <nav class="header__nav">
+        <a href="orders.html" class="header__nav-item">
+          <i data-lucide="package"></i>
+          <span class="header__nav-text">My Orders</span>
+        </a>
+
+        <a href="cart.html" class="header__nav-item header__nav-item--cart">
+          <span class="header__cart-icon">
+            <i data-lucide="shopping-cart"></i>
+            <span class="cart-badge" data-cart-badge hidden></span>
+          </span>
+          <span class="header__nav-text">Cart</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container cart-page">
+    <div class="cart-page__header">
+      <div class="cart-page__heading">
+        <h1 class="cart-page__title" data-cart-title></h1>
+        <p class="cart-page__subtitle" data-cart-subtitle></p>
+      </div>
+      <a href="index.html" class="cart-page__back">← Back to products</a>
+    </div>
+
+    <div class="cart-page__content" data-cart-content></div>
+  </main>
+
+  <script type="module" src="js/pages/orders.js"></script>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

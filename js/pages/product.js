@@ -1,40 +1,16 @@
+import { getProductById } from "../services/productService.js";
+import { calculateDiscountedPrice, formatCurrency } from "../utils/helpers.js";
+import { initSizeSelector } from "../components/SizeSelector.js";
+import { addToCart } from "../services/cartService.js";
+import { showToast } from "../components/Toast.js";
+import { initCartBadge, updateCartBadge } from "../components/CartBadge.js";
+
 const params = new URLSearchParams(window.location.search);
 const productId = Number(params.get("id"));
 
 const productWrapper = document.querySelector(".product-page__wrapper");
 
-
-// ===============================
-// 2️⃣ Fetch Products
-// ===============================
-
-async function getProducts() {
-  try {
-    const response = await fetch("../../data/products.json");
-    return await response.json();
-  } catch (error) {
-    console.error("Error fetching products:", error);
-    return [];
-  }
-}
-
-
-// ===============================
-// 3️⃣ Calculate Discounted Price
-// ===============================
-
-function calculateDiscountedPrice(price, discount) {
-  if (!discount || discount === 0) return price;
-  return Math.round(price - (price * discount) / 100);
-}
-
-
-// ===============================
-// 4️⃣ Render Product
-// ===============================
-
 function renderProduct(product) {
-
   const finalPrice = calculateDiscountedPrice(
     product.price,
     product.discountPercentage
@@ -42,7 +18,6 @@ function renderProduct(product) {
 
   productWrapper.innerHTML = `
     <div class="product">
-
       <!-- LEFT SIDE (IMAGE) -->
       <div class="product__left">
         ${product.discountPercentage > 0
@@ -54,10 +29,8 @@ function renderProduct(product) {
         <img src="${product.image}" alt="${product.name}" />
       </div>
 
-
       <!-- RIGHT SIDE (DETAILS) -->
       <div class="product__right">
-
         ${product.discountPercentage > 0
           ? `<div class="product__offer">
                🎉 Flat ${product.discountPercentage}% OFF on this product
@@ -74,12 +47,12 @@ function renderProduct(product) {
 
         <div class="product__price">
           <span class="product__price--final">
-            ₹${finalPrice}
+            ${formatCurrency(finalPrice)}
           </span>
 
           ${product.discountPercentage > 0
             ? `<span class="product__price--original">
-                 ₹${product.price}
+                 ${formatCurrency(product.price)}
                </span>`
             : ""}
         </div>
@@ -90,63 +63,51 @@ function renderProduct(product) {
 
         <div class="product__sizes">
           <p>Select Size</p>
-          <div class="product__size-list">
-            ${product.sizes.map(size =>
-              `<button class="product__size" data-size="${size}">
+          <div class="product__size-list" data-size-selector>
+            ${product.sizes
+              .map(
+                size => `<button class="product__size" data-size="${size}">
                 ${size}
               </button>`
-            ).join("")}
+              )
+              .join("")}
           </div>
         </div>
 
-        <button class="product__add-btn">
+        <button class="product__add-btn" type="button">
           🛒 Add to Cart
         </button>
-
       </div>
     </div>
   `;
 
-  enableSizeSelection();
-}
+  const sizeSelector = document.querySelector("[data-size-selector]");
+  const getSelectedSize = initSizeSelector(sizeSelector);
 
+  const addButton = document.querySelector(".product__add-btn");
+  addButton.addEventListener("click", () => {
+    const selectedSize = getSelectedSize();
+    const updatedCart = addToCart(product, selectedSize);
+    updateCartBadge();
 
-// ===============================
-// 5️⃣ Size Selection Logic
-// ===============================
-
-function enableSizeSelection() {
-  const sizeButtons = document.querySelectorAll(".product__size");
-
-  sizeButtons.forEach(button => {
-    button.addEventListener("click", () => {
-
-      // Remove active from all
-      sizeButtons.forEach(btn =>
-        btn.classList.remove("active")
-      );
-
-      // Add active to clicked
-      button.classList.add("active");
+    showToast({
+      title: "Product added to cart successfully",
+      message: `${product.name} (${selectedSize}) has been added.`
     });
+
+    return updatedCart;
   });
 }
 
-
-// ===============================
-// 6️⃣ Initialize Page
-// ===============================
-
 async function init() {
+  initCartBadge();
 
   if (!productId) {
     productWrapper.innerHTML = "<p>Invalid product ID</p>";
     return;
   }
 
-  const products = await getProducts();
-
-  const product = products.find(p => p.id === productId);
+  const product = await getProductById(productId);
 
   if (!product) {
     productWrapper.innerHTML = "<p>Product not found</p>";
