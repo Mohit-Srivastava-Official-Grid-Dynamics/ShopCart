@@ -2,7 +2,6 @@
 
 @use "base/reset";
 @use "layout/header";
-@use "layout/grid";
 @use 'layout/container';
 
 
@@ -14,7 +13,6 @@
 @use "components/product";
 
 @use "pages/listing";
-@use "pages/product-details";
 @use "pages/orders";
 
 @use "responsive";
