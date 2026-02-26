@@ -2,18 +2,17 @@
 
 @use "base/reset";
 @use "layout/header";
-@use "layout/grid";
 @use 'layout/container';
 
 
 @use "components/button";
 @use "components/product-card";
 @use "components/sidebar";
+@use "components/toast";
 @use "components/banner";
 @use "components/product";
 
 @use "pages/listing";
-@use "pages/product-details";
 @use "pages/orders";
 
 @use "responsive";
