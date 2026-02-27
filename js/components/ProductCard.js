@@ -7,7 +7,8 @@ export function getProductCardMarkup(product, options = {}) {
     showBadge = true,
     showOriginalPrice = true,
     size = null,
-    quantity = null
+    quantity = null,
+    actionsMarkup = ""
   } = options;
 
   const finalPrice = calculateDiscountedPrice(
@@ -60,6 +61,7 @@ export function getProductCardMarkup(product, options = {}) {
           </span>
           ${originalPriceMarkup}
         </div>
+        ${actionsMarkup}
       </div>
     </${wrapperTag}>
   `;
