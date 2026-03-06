@@ -321,6 +321,97 @@ a {
   border-radius: 6px;
   font-size: 13px;
 }
+<<<<<<< Updated upstream
+=======
+.sidebar__search {
+  position: relative;
+}
+.sidebar__search input {
+  width: 100%;
+  padding: 10px 68px 10px 36px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 13px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.sidebar__search input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+.sidebar__search input:focus {
+  outline: none;
+  border-color: #16a34a;
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.12);
+}
+.sidebar__search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6b7280;
+}
+.sidebar__search-icon i {
+  width: 16px;
+  height: 16px;
+}
+.sidebar__search-action, .sidebar__search-clear {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  padding: 4px;
+  color: #6b7280;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.sidebar__search-action i, .sidebar__search-clear i {
+  width: 16px;
+  height: 16px;
+}
+.sidebar__search-action:hover, .sidebar__search-clear:hover {
+  background: #f3f4f6;
+  color: #111827;
+}
+.sidebar__search-action {
+  right: 10px;
+}
+.sidebar__search-clear {
+  right: 36px;
+}
+.sidebar__search-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: #fff6e6;
+  border: 1px solid #f1d6b5;
+  border-radius: 12px;
+  padding: 6px;
+  box-shadow: 0 10px 20px rgba(17, 24, 39, 0.08);
+  display: none;
+  z-index: 20;
+}
+.sidebar__search--open .sidebar__search-dropdown {
+  display: block;
+}
+.sidebar__search-option {
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: transparent;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #1f2937;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.sidebar__search-option:hover, .sidebar__search-option.sidebar__search-option--active {
+  background: #ffe9c8;
+}
+>>>>>>> Stashed changes
 
 .custom-checkbox {
   display: flex;
@@ -737,9 +828,14 @@ input:checked + .custom-checkbox__box::after {
   font-weight: 700;
 }
 
-.cart-summary .btn {
-  width: 100%;
+.cart-summary__actions {
+  display: grid;
+  gap: 10px;
   margin-top: 6px;
+}
+
+.cart-summary__actions .btn {
+  width: 100%;
 }
 
 .cart-item__actions {

@@ -73,9 +73,14 @@
   font-weight: 700;
 }
 
-.cart-summary .btn {
-  width: 100%;
+.cart-summary__actions {
+  display: grid;
+  gap: 10px;
   margin-top: 6px;
+}
+
+.cart-summary__actions .btn {
+  width: 100%;
 }
 
 .cart-item__actions {

@@ -1,4 +1,4 @@
-import { getItem, setItem } from "../utils/storage.js";
+import { getItem, setItem, removeItem } from "../utils/storage.js";
 import { calculateDiscountedPrice } from "../utils/helpers.js";
 
 const CART_KEY = "cartItems";
@@ -58,6 +58,11 @@ export function removeFromCart(id, size) {
 
   setItem(CART_KEY, updatedItems);
   return updatedItems;
+}
+
+export function clearCart() {
+  removeItem(CART_KEY);
+  return [];
 }
 
 export function getCartCount() {
