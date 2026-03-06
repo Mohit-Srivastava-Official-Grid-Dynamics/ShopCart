@@ -81,6 +81,31 @@
 
       <div class="sidebar__divider"></div>
 
+      <!-- Search Filter -->
+      <div class="sidebar__section">
+        <div class="sidebar__title">Search</div>
+        <div class="sidebar__search">
+          <span class="sidebar__search-icon" aria-hidden="true">
+            <i data-lucide="search"></i>
+          </span>
+          <input type="search" id="searchInput" placeholder="Search products" aria-label="Search products" autocomplete="off" aria-haspopup="listbox" aria-expanded="false" aria-controls="searchSuggestions" />
+          <button class="sidebar__search-action" type="button" data-search-focus aria-label="Show suggestions">
+            <i data-lucide="chevron-down"></i>
+          </button>
+          <button class="sidebar__search-clear" type="button" data-search-clear aria-label="Clear search" hidden>
+            <i data-lucide="x"></i>
+          </button>
+          <div class="sidebar__search-dropdown" id="searchSuggestions" role="listbox" aria-label="Search suggestions">
+            <button class="sidebar__search-option" type="button" data-suggestion="T-Shirt">T-Shirt</button>
+            <button class="sidebar__search-option" type="button" data-suggestion="Jeans">Jeans</button>
+            <button class="sidebar__search-option" type="button" data-suggestion="Jacket">Jacket</button>
+            <button class="sidebar__search-option" type="button" data-suggestion="Hoodie">Hoodie</button>
+            <button class="sidebar__search-option" type="button" data-suggestion="Sneakers">Sneakers</button>
+            <button class="sidebar__search-option" type="button" data-suggestion="Pants">Pants</button>
+          </div>
+        </div>
+      </div>
+
       <!-- Size Filter -->
       <div class="sidebar__section">
         <div class="sidebar__title">Size</div>
