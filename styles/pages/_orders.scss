@@ -74,13 +74,24 @@
 }
 
 .cart-summary__actions {
-  display: grid;
-  gap: 10px;
-  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row-reverse;
+  gap: 12px;
+  margin-top: 8px;
 }
 
 .cart-summary__actions .btn {
-  width: 100%;
+  flex: 1;
+}
+
+.cart-summary__actions .btn:first-child {
+  justify-content: center;
+}
+
+.cart-summary__actions .btn:last-child {
+  justify-content: center;
 }
 
 .cart-item__actions {
