@@ -162,6 +162,10 @@ function bindCartActions(container, config) {
     if (clearButton) {
       event.preventDefault();
       event.stopPropagation();
+      const confirmed = window.confirm(
+        "Are you sure you want to clear all items from your cart?"
+      );
+      if (!confirmed) return;
       clearCart();
       renderCartPage(config);
       return;
