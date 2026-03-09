@@ -14,10 +14,6 @@ Cart (Desktop)
 
 ![ShopCraft Cart Desktop](assets/screenshots/shopcraft-cart-desktop.png)
 
-Orders (Desktop)
-
-![ShopCraft Orders Desktop](assets/screenshots/shopcraft-orders-desktop.png)
-
 Listing (Mobile)
 
 ![ShopCraft Listing Mobile](assets/screenshots/shopcraft-listing-mobile.png)
@@ -30,10 +26,6 @@ Cart (Mobile)
 
 ![ShopCraft Cart Mobile](assets/screenshots/shopcraft-cart-mobile.png)
 
-Orders (Mobile)
-
-![ShopCraft Orders Mobile](assets/screenshots/shopcraft-orders-mobile.png)
-
 ---
 
 **Features**
@@ -42,7 +34,7 @@ Orders (Mobile)
 - Dynamic filters (size, price range, sale only)
 - Product details page with size selection and discount banner
 - Add to cart using LocalStorage
-- Cart + Orders pages reuse the same product card UI
+- Cart page reuses the same product card UI
 - Toast success message on add‑to‑cart
 - Fully responsive layout with mobile filter drawer
 
@@ -90,9 +82,8 @@ npm run sass
 - `index.html` — Product listing page
 - `product.html` — Product detail page
 - `cart.html` — Cart page
-- `orders.html` — Orders page
 - `data/products.json` — Mock product data
-- `js/pages/` — Page controllers (listing, product, cart, orders)
+- `js/pages/` — Page controllers (listing, product, cart)
 - `js/components/` — Reusable UI helpers (product card, toast, filters, badge)
 - `js/services/` — Business logic (cart + product services)
 - `js/utils/` — Storage + formatting helpers
