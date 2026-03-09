@@ -51,7 +51,11 @@ async function loadProducts() {
       finalPrice: calculateDiscountedPrice(
         product.price,
         product.discountPercentage
-      )
+      ),
+      searchText: [product.name, product.category, product.description]
+        .filter(Boolean)
+        .join(" ")
+        .toLowerCase()
     }));
 
     filteredProducts = [...allProducts];
@@ -106,9 +110,15 @@ const filterControls = initFilterSidebar({
 function applyFilters(filters = filterControls?.getFilters?.()) {
   if (!filters) return;
 
-  const { size, min, max, saleOnly } = filters;
+  const { search, size, min, max, saleOnly } = filters;
+  const query = (search || "").trim().toLowerCase();
 
   filteredProducts = allProducts.filter(product => {
+    // Search filter
+    if (query && !product.searchText.includes(query)) {
+      return false;
+    }
+
     // Size filter
     if (size && !product.sizes.includes(size)) {
       return false;
