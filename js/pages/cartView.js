@@ -1,6 +1,7 @@
 import {
   getCartItems,
   getCartSubtotal,
+  clearCart,
   removeFromCart,
   updateCartItemQuantity
 } from "../services/cartService.js";
@@ -126,7 +127,12 @@ export function renderCartPage({
         <span>Total</span>
         <span>${formatCurrency(subtotal)}</span>
       </div>
-      <button class="btn" type="button">Proceed to Checkout</button>
+      <div class="cart-summary__actions">
+        <button class="btn" type="button">Proceed to Checkout</button>
+        <button class="btn btn--outline" type="button" data-clear-cart>
+          Clear Cart
+        </button>
+      </div>
     </div>
   `;
 
@@ -141,6 +147,7 @@ function bindCartActions(container, config) {
     const removeButton = event.target.closest("[data-remove-item]");
     const increaseButton = event.target.closest("[data-qty-increase]");
     const decreaseButton = event.target.closest("[data-qty-decrease]");
+    const clearButton = event.target.closest("[data-clear-cart]");
 
     if (removeButton) {
       event.preventDefault();
@@ -148,6 +155,14 @@ function bindCartActions(container, config) {
       const id = Number(removeButton.dataset.itemId);
       const size = removeButton.dataset.itemSize;
       removeFromCart(id, size);
+      renderCartPage(config);
+      return;
+    }
+
+    if (clearButton) {
+      event.preventDefault();
+      event.stopPropagation();
+      clearCart();
       renderCartPage(config);
       return;
     }
