@@ -14,6 +14,7 @@ export function initFilterSidebar({ onChange } = {}) {
   const searchClearButton = searchContainer?.querySelector("[data-search-clear]");
   const searchFocusButton = searchContainer?.querySelector("[data-search-focus]");
   let activeSuggestionIndex = -1;
+  let suppressFocusOpen = false;
 
   suggestionButtons.forEach((button, index) => {
     if (!button.id) {
@@ -126,6 +127,7 @@ export function initFilterSidebar({ onChange } = {}) {
   saleCheckbox?.addEventListener("change", notifyChange);
   function applySuggestion(value) {
     if (!searchInput) return;
+    suppressFocusOpen = true;
     searchInput.value = value;
     updateClearButton();
     notifyChange();
@@ -145,6 +147,10 @@ export function initFilterSidebar({ onChange } = {}) {
     notifyChange();
   });
   searchInput?.addEventListener("focus", () => {
+    if (suppressFocusOpen) {
+      suppressFocusOpen = false;
+      return;
+    }
     const visibleCount = updateSuggestionsVisibility(searchInput.value.trim());
     if (visibleCount > 0) openSuggestions();
   });

@@ -383,8 +383,8 @@ a {
   top: calc(100% + 8px);
   left: 0;
   right: 0;
-  background: #fff6e6;
-  border: 1px solid #f1d6b5;
+  background: #eefcf3;
+  border: 1px solid #bfe9c9;
   border-radius: 12px;
   padding: 6px;
   box-shadow: 0 10px 20px rgba(17, 24, 39, 0.08);
@@ -402,12 +402,12 @@ a {
   padding: 8px 10px;
   border-radius: 8px;
   font-size: 13px;
-  color: #1f2937;
+  color: #0f3d2e;
   cursor: pointer;
   transition: background 0.2s ease;
 }
 .sidebar__search-option:hover, .sidebar__search-option.sidebar__search-option--active {
-  background: #ffe9c8;
+  background: #d7f5e0;
 }
 
 .custom-checkbox {
