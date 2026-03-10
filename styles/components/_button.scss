@@ -9,28 +9,28 @@
   border-radius: 12px;
   border: 1px solid transparent;
   background: $color-primary;
-  color: #ffffff;
+  color: $color-white;
   font-weight: 600;
   font-size: 15px;
   cursor: pointer;
   transition: background 0.2s ease, transform 0.1s ease;
 
   &:hover {
-    background: #0f9d7a;
+    background: $color-primary-dark;
   }
 
   &:active {
     transform: scale(0.98);
   }
-}
 
-.btn--outline {
-  background: #ffffff;
-  color: $color-text-dark;
-  border-color: $color-border;
-}
+  &--outline {
+    background: $color-white;
+    color: $color-text-dark;
+    border-color: $color-border;
+  }
 
-.btn--sm {
-  padding: 8px 14px;
-  font-size: 14px;
+  &--sm {
+    padding: 8px 14px;
+    font-size: 14px;
+  }
 }

@@ -4,14 +4,14 @@
   padding: 18px 20px;
   border-radius: 12px;
   border: 1px solid $color-border;
-  background: #f9fafb;
+  background: $color-bg-subtle;
   color: $color-text-secondary;
   font-size: 15px;
   text-align: center;
-}
 
-.state-message--error {
-  border-color: #fecaca;
-  background: #fef2f2;
-  color: #b91c1c;
+  &--error {
+    border-color: $color-danger-border;
+    background: $color-danger-light;
+    color: $color-danger-text;
+  }
 }

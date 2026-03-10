@@ -1,6 +1,6 @@
-# ShopCraft — E-Commerce Web App (Vanilla JS + SCSS)
+# ShopCart — E-Commerce Web App (Vanilla JS + SCSS)
 
-ShopCraft is a lightweight, front‑end e‑commerce experience built with **plain HTML, SCSS, and vanilla JavaScript**. It uses a static JSON file as a mock API and LocalStorage for cart persistence, mirroring real‑world app structure without any backend.
+ShopCart is a lightweight, front‑end e‑commerce experience built with **plain HTML, SCSS, and vanilla JavaScript**. It uses a static JSON file as a mock API and LocalStorage for cart persistence, mirroring real‑world app structure without any backend.
 
 ---
 
@@ -8,27 +8,27 @@ ShopCraft is a lightweight, front‑end e‑commerce experience built with **pla
 
 Listing (Desktop)
 
-![ShopCraft Listing Desktop](assets/screenshots/shopcraft-listing-desktop.png)
+![ShopCart Listing Desktop](assets/screenshots/shopcraft-listing-desktop.png)
 
 Cart (Desktop)
 
-![ShopCraft Cart Desktop](assets/screenshots/shopcraft-cart-desktop.png)
+![ShopCart Cart Desktop](assets/screenshots/shopcraft-cart-desktop.png)
 
 Orders (Desktop)
 
-![ShopCraft Orders Desktop](assets/screenshots/shopcraft-orders-desktop.png)
+![ShopCart Orders Desktop](assets/screenshots/shopcraft-orders-desktop.png)
 
 Listing (Mobile)
 
-![ShopCraft Listing Mobile](assets/screenshots/shopcraft-listing-mobile.png)
+![ShopCart Listing Mobile](assets/screenshots/shopcraft-listing-mobile.png)
 
 Filters Drawer (Mobile)
 
-![ShopCraft Filters Drawer Mobile](assets/screenshots/shopcraft-filters-mobile.png)
+![ShopCart Filters Drawer Mobile](assets/screenshots/shopcraft-filters-mobile.png)
 
 Cart (Mobile)
 
-![ShopCraft Cart Mobile](assets/screenshots/shopcraft-cart-mobile.png)
+![ShopCart Cart Mobile](assets/screenshots/shopcraft-cart-mobile.png)
 
 ---
 

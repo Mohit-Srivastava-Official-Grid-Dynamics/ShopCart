@@ -1,3 +1,5 @@
+@use "../abstracts/variables" as *;
+
 .listing {
   padding: 40px 0;
 
@@ -22,7 +24,7 @@
   }
 
   &__subtitle {
-    color: #6b7280;
+    color: $color-text-secondary;
     font-size: 14px;
   }
 
@@ -31,10 +33,10 @@
     align-items: center;
     gap: 10px;
     padding: 10px 16px;
-    border: 1px solid #e5e7eb;
+    border: 1px solid $color-border;
     border-radius: 12px;
-    background: #ffffff;
-    color: #111827;
+    background: $color-white;
+    color: $color-text-dark;
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
@@ -46,7 +48,7 @@
     }
 
     &:hover {
-      border-color: #16a34a;
+      border-color: $color-success-strong;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
     }
   }
@@ -65,27 +67,27 @@
   gap: 10px;
   justify-content: center;
   margin-top: 28px;
-}
 
-.pagination__btn {
-  min-width: 36px;
-  height: 36px;
-  padding: 0 10px;
-  border-radius: 10px;
-  border: 1px solid #e5e7eb;
-  background: #ffffff;
-  font-weight: 600;
-  cursor: pointer;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
+  &__btn {
+    min-width: 36px;
+    height: 36px;
+    padding: 0 10px;
+    border-radius: 10px;
+    border: 1px solid $color-border;
+    background: $color-white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 
-.pagination__btn:hover {
-  border-color: #16a34a;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
-}
+    &:hover {
+      border-color: $color-success-strong;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    }
 
-.pagination__btn--active {
-  background: #16a34a;
-  border-color: #16a34a;
-  color: #ffffff;
+    &--active {
+      background: $color-success-strong;
+      border-color: $color-success-strong;
+      color: $color-white;
+    }
+  }
 }
