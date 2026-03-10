@@ -828,14 +828,22 @@ input:checked + .custom-checkbox__box::after {
 .cart-summary__actions {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  flex-direction: row-reverse;
+  justify-content: flex-end;
   gap: 12px;
   margin-top: 8px;
 }
 
 .cart-summary__actions .btn {
-  flex: 1;
+  flex: 0 0 auto;
+  min-width: 160px;
+}
+
+.cart-summary__actions .btn {
+  order: 1;
+}
+
+.cart-summary__actions .btn:not(.btn--outline) {
+  order: 2;
 }
 
 .cart-summary__actions .btn:first-child {
