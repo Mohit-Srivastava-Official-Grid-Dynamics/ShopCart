@@ -8,7 +8,7 @@ const productsGrid = document.querySelector(".products__grid");
 const subtitle = document.querySelector(".listing__subtitle");
 const filtersOpenButton = document.querySelector(".listing__filters-btn");
 const filtersCloseButton = document.querySelector(".sidebar__close");
-const filtersBackdrop = document.querySelector(".filters-backdrop");
+const filtersBackdrop = document.querySelector(".listing__filters-backdrop");
 const paginationContainer = document.querySelector("[data-pagination]");
 
 let allProducts = [];

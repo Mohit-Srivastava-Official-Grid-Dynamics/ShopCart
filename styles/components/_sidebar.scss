@@ -1,5 +1,7 @@
+@use "../abstracts/variables" as *;
+
 .sidebar {
-  border-right: 1px solid #e5e7eb;
+  border-right: 1px solid $color-border;
   padding-right: 24px;
 
   &__top {
@@ -27,7 +29,7 @@
     justify-content: center;
     border: none;
     background: transparent;
-    color: #111827;
+    color: $color-text-dark;
     cursor: pointer;
     padding: 6px;
     border-radius: 8px;
@@ -39,13 +41,13 @@
     }
 
     &:hover {
-      background: #f3f4f6;
+      background: $color-bg-muted;
     }
   }
 
   &__divider {
     height: 1px;
-    background: #e5e7eb;
+    background: $color-border;
     margin: 16px 0 24px;
   }
 
@@ -63,22 +65,22 @@
 
   &__option {
     padding: 8px 14px;
-    border: 1px solid #d1d5db;
-    background: #ffffff;
+    border: 1px solid $color-border-strong;
+    background: $color-white;
     border-radius: 6px;
     cursor: pointer;
     font-size: 13px;
     transition: 0.2s ease;
 
     &:hover {
-      border-color: #16a34a;
-      color: #16a34a;
+      border-color: $color-success-strong;
+      color: $color-success-strong;
     }
         /* ✅ ACTIVE STATE */
     &.active {
-      background-color: #16a34a;
-      color: #ffffff;
-      border-color: #16a34a;
+      background-color: $color-success-strong;
+      color: $color-white;
+      border-color: $color-success-strong;
       font-weight: 500;
     }
   }
@@ -91,7 +93,7 @@
     input {
       width: 90px;
       padding: 8px;
-      border: 1px solid #d1d5db;
+      border: 1px solid $color-border-strong;
       border-radius: 6px;
       font-size: 13px;
     }
@@ -103,7 +105,7 @@
     input {
       width: 100%;
       padding: 10px 68px 10px 36px;
-      border: 1px solid #d1d5db;
+      border: 1px solid $color-border-strong;
       border-radius: 10px;
       font-size: 13px;
       transition: border-color 0.2s ease, box-shadow 0.2s ease;
@@ -115,7 +117,7 @@
 
       &:focus {
         outline: none;
-        border-color: #16a34a;
+        border-color: $color-success-strong;
         box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.12);
       }
     }
@@ -126,7 +128,7 @@
     left: 10px;
     top: 50%;
     transform: translateY(-50%);
-    color: #6b7280;
+    color: $color-text-secondary;
 
     i {
       width: 16px;
@@ -142,7 +144,7 @@
     border: none;
     background: transparent;
     padding: 4px;
-    color: #6b7280;
+    color: $color-text-secondary;
     cursor: pointer;
     border-radius: 6px;
     transition: background 0.2s ease, color 0.2s ease;
@@ -153,8 +155,8 @@
     }
 
     &:hover {
-      background: #f3f4f6;
-      color: #111827;
+      background: $color-bg-muted;
+      color: $color-text-dark;
     }
   }
 
@@ -171,8 +173,8 @@
     top: calc(100% + 8px);
     left: 0;
     right: 0;
-    background: #eefcf3;
-    border: 1px solid #bfe9c9;
+    background: $color-mint-bg;
+    border: 1px solid $color-mint-border;
     border-radius: 12px;
     padding: 6px;
     box-shadow: 0 10px 20px rgba(17, 24, 39, 0.08);
@@ -192,13 +194,13 @@
     padding: 8px 10px;
     border-radius: 8px;
     font-size: 13px;
-    color: #0f3d2e;
+    color: $color-mint-text;
     cursor: pointer;
     transition: background 0.2s ease;
 
     &:hover,
     &.sidebar__search-option--active {
-      background: #d7f5e0;
+      background: $color-mint-hover;
     }
   }
 
@@ -228,7 +230,7 @@
   &__box {
     width: 18px;
     height: 18px;
-    border: 2px solid #d1d5db;
+    border: 2px solid $color-border-strong;
     border-radius: 6px; // YES now it works
     display: flex;
     align-items: center;
@@ -242,8 +244,8 @@
 
   /* Checked state */
   input:checked + &__box {
-    background: #16a34a;
-    border-color: #16a34a;
+    background: $color-success-strong;
+    border-color: $color-success-strong;
   }
 
   input:checked + &__box::after {
@@ -254,6 +256,6 @@
   }
 
   &:hover &__box {
-    border-color: #16a34a;
+    border-color: $color-success-strong;
   }
 }

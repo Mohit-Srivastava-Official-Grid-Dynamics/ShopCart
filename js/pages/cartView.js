@@ -80,7 +80,7 @@ export function renderCartPage({
                   <div class="cart-item__quantity" role="group" aria-label="Quantity controls">
                     <button
                       type="button"
-                      class="qty-btn"
+                      class="cart-item__qty-btn"
                       data-qty-decrease
                       data-item-id="${item.id}"
                       data-item-size="${item.size}"
@@ -91,7 +91,7 @@ export function renderCartPage({
                     <span class="cart-item__qty-value">${item.quantity}</span>
                     <button
                       type="button"
-                      class="qty-btn"
+                      class="cart-item__qty-btn"
                       data-qty-increase
                       data-item-id="${item.id}"
                       data-item-size="${item.size}"
