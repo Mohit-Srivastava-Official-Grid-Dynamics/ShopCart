@@ -17,7 +17,9 @@ export function renderCartPage({
   emptyTitle = "Your cart is empty",
   emptyMessage = "Looks like you haven't added anything to your cart yet.",
   emptyActionLabel = "Browse Products",
-  emptyActionHref = "index.html"
+  emptyActionHref = "index.html",
+  showActions = true,
+  showSummary = true
 } = {}) {
   const config = {
     title,
@@ -48,7 +50,9 @@ export function renderCartPage({
 
   if (!contentEl) return;
 
-  bindCartActions(contentEl, config);
+  if (showActions) {
+    bindCartActions(contentEl, config);
+  }
 
   if (cartItems.length === 0) {
     renderEmptyState(contentEl, {
@@ -70,42 +74,44 @@ export function renderCartPage({
             showBadge: false,
             size: item.size,
             quantity: item.quantity,
-            actionsMarkup: `
-              <div class="cart-item__actions">
-                <div class="cart-item__quantity" role="group" aria-label="Quantity controls">
+            actionsMarkup: showActions
+              ? `
+                <div class="cart-item__actions">
+                  <div class="cart-item__quantity" role="group" aria-label="Quantity controls">
+                    <button
+                      type="button"
+                      class="qty-btn"
+                      data-qty-decrease
+                      data-item-id="${item.id}"
+                      data-item-size="${item.size}"
+                      aria-label="Decrease quantity"
+                    >
+                      −
+                    </button>
+                    <span class="cart-item__qty-value">${item.quantity}</span>
+                    <button
+                      type="button"
+                      class="qty-btn"
+                      data-qty-increase
+                      data-item-id="${item.id}"
+                      data-item-size="${item.size}"
+                      aria-label="Increase quantity"
+                    >
+                      +
+                    </button>
+                  </div>
                   <button
                     type="button"
-                    class="qty-btn"
-                    data-qty-decrease
+                    class="btn btn--outline btn--sm"
+                    data-remove-item
                     data-item-id="${item.id}"
                     data-item-size="${item.size}"
-                    aria-label="Decrease quantity"
                   >
-                    −
-                  </button>
-                  <span class="cart-item__qty-value">${item.quantity}</span>
-                  <button
-                    type="button"
-                    class="qty-btn"
-                    data-qty-increase
-                    data-item-id="${item.id}"
-                    data-item-size="${item.size}"
-                    aria-label="Increase quantity"
-                  >
-                    +
+                    Remove
                   </button>
                 </div>
-                <button
-                  type="button"
-                  class="btn btn--outline btn--sm"
-                  data-remove-item
-                  data-item-id="${item.id}"
-                  data-item-size="${item.size}"
-                >
-                  Remove
-                </button>
-              </div>
-            `
+              `
+              : ""
           })
         )
         .join("")}
@@ -113,28 +119,30 @@ export function renderCartPage({
   `;
 
   const subtotal = getCartSubtotal();
-  const summaryMarkup = `
-    <div class="cart-summary">
-      <div class="cart-summary__row">
-        <span>Items</span>
-        <span>${totalItems}</span>
+  const summaryMarkup = showSummary
+    ? `
+      <div class="cart-summary">
+        <div class="cart-summary__row">
+          <span>Items</span>
+          <span>${totalItems}</span>
+        </div>
+        <div class="cart-summary__row">
+          <span>Subtotal</span>
+          <span>${formatCurrency(subtotal)}</span>
+        </div>
+        <div class="cart-summary__row cart-summary__row--total">
+          <span>Total</span>
+          <span>${formatCurrency(subtotal)}</span>
+        </div>
+        <div class="cart-summary__actions">
+          <button class="btn" type="button">Proceed to Checkout</button>
+          <button class="btn btn--outline" type="button" data-clear-cart>
+            Clear Cart
+          </button>
+        </div>
       </div>
-      <div class="cart-summary__row">
-        <span>Subtotal</span>
-        <span>${formatCurrency(subtotal)}</span>
-      </div>
-      <div class="cart-summary__row cart-summary__row--total">
-        <span>Total</span>
-        <span>${formatCurrency(subtotal)}</span>
-      </div>
-      <div class="cart-summary__actions">
-        <button class="btn" type="button">Proceed to Checkout</button>
-        <button class="btn btn--outline" type="button" data-clear-cart>
-          Clear Cart
-        </button>
-      </div>
-    </div>
-  `;
+    `
+    : "";
 
   contentEl.innerHTML = listMarkup + summaryMarkup;
 }
