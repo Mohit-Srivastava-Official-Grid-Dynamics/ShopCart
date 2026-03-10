@@ -5,9 +5,6 @@ export function initFilterSidebar({ onChange } = {}) {
   const saleCheckbox = document.getElementById("saleOnly");
   const searchInput = document.getElementById("searchInput");
   const searchContainer = searchInput?.closest(".sidebar__search") ?? null;
-  const searchDropdown = searchContainer?.querySelector(
-    ".sidebar__search-dropdown"
-  );
   const suggestionButtons = Array.from(
     searchContainer?.querySelectorAll("[data-suggestion]") ?? []
   );
